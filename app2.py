@@ -812,9 +812,10 @@ with tabs[1]:
         atlas_psr = atlas_psr.query("descricao_tipologia == @tipologia_selecionada_psr")
 
     # METRICAS2
-    col_metrics_col1, col_metrics_col2 = col_metrics2.columns([1, 1])
-    col_metrics_col1.metric(f'Ocorrências Reportadas de {tipologia_selecionada_psr}', len(atlas_psr))
-    col_metrics_col2.metric(f'Sinistros de {tipologia_selecionada_psr}', len(psrQ2_2))
+    col_metrics_col1, col_metrics_col2, col_metrics_col3 = col_metrics2.columns([1, 1, 1])
+    col_metrics_col1.metric(f'Ocorrências Reportadas', len(atlas_psr))
+    col_metrics_col2.metric(f'Total de Sinistros', len(psrQ2_2))
+    col_metrics_col3.metric(f'Média de Sinistros', sin_quant)
 
 
 
